@@ -47,14 +47,19 @@ export function ContactForm() {
 
   return (
     <div className="mx-auto mt-14 grid max-w-5xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-      <aside className="glass-panel rounded-lg p-6">
+      <aside className="glass-panel min-w-0 rounded-lg p-5 sm:p-6">
         <div className="grid h-12 w-12 place-items-center rounded-md border border-primary/30 bg-primary/10 text-primary">
           <Mail className="h-5 w-5" />
         </div>
-        <h3 className="break-anywhere mt-6 font-mono text-xl font-semibold text-foreground">{profile.email}</h3>
+        <h3 className="break-anywhere mt-6 max-w-full font-mono text-base font-semibold leading-relaxed text-foreground sm:text-xl">
+          {profile.email}
+        </h3>
         <p className="mt-3 text-sm leading-7 text-muted-foreground">{profile.city}</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Button asChild variant="red">
+        <div className="mt-6 grid grid-cols-2 gap-3 min-[420px]:grid-cols-[minmax(0,1.6fr)_repeat(4,2.75rem)]">
+          <Button
+            asChild
+            className="bg-[#25D366] text-white shadow-[0_18px_50px_rgba(37,211,102,0.24)] hover:bg-[#1ebe5d]"
+          >
             <a href={profile.whatsappUrl} target="_blank" rel="noreferrer">
               <MessageCircle className="h-4 w-4" />
               {t("actions.whatsapp")}
@@ -68,7 +73,7 @@ export function ContactForm() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="focus-ring grid h-11 w-11 place-items-center rounded-md border border-border bg-secondary/50 text-muted-foreground transition hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+                className="focus-ring grid h-11 min-w-0 place-items-center rounded-md border border-border bg-secondary/50 text-muted-foreground transition hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
                 aria-label={social.label}
               >
                 <Icon className="h-4 w-4" />
