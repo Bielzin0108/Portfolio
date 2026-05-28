@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050505"/>
+  <path d="M0 0h1200v630H0z" fill="url(#g)"/>
+  <g opacity=".25">
+    <path d="M0 100h1200M0 180h1200M0 260h1200M0 340h1200M0 420h1200M0 500h1200" stroke="#F4F7FB"/>
+    <path d="M160 0v630M280 0v630M400 0v630M520 0v630M640 0v630M760 0v630M880 0v630M1000 0v630" stroke="#F4F7FB"/>
+  </g>
+  <rect x="104" y="112" width="992" height="406" rx="18" fill="#0E0F12" stroke="#26272B"/>
+  <text x="150" y="238" fill="#F4F7FB" font-family="Inter, Arial" font-size="58" font-weight="800">Gabriel Cavalcante Sobreira</text>
+  <text x="152" y="306" fill="#A7ADB8" font-family="JetBrains Mono, monospace" font-size="30">Software Engineer | Fullstack</text>
+  <text x="152" y="386" fill="#2DF28C" font-family="JetBrains Mono, monospace" font-size="24">&gt; Building scalable web experiences</text>
+  <rect x="152" y="430" width="206" height="8" fill="#EF4444"/>
+  <rect x="374" y="430" width="126" height="8" fill="#2DF28C"/>
+  <defs>
+    <radialGradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(972 72) rotate(133) scale(622 904)">
+      <stop stop-color="#EF4444" stop-opacity=".28"/>
+      <stop offset=".45" stop-color="#2DF28C" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio fullstack de Gabriel Cavalcante Sobreira, Software Engineer especializado em experiências web modernas."
+    />
+    <meta name="theme-color" content="#050505" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("portfolio-theme");
+          const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          const theme = savedTheme || systemTheme;
+          document.documentElement.classList.add(theme);
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          document.documentElement.classList.add("dark");
+          document.documentElement.style.colorScheme = "dark";
+        }
+      })();
+    </script>
+    <style>
+      html.dark,
+      html.dark body {
+        background: #050505;
+        color: #f4f7fb;
+      }
+
+      html.light,
+      html.light body {
+        background: #f4f7fb;
+        color: #0d0f13;
+      }
+    </style>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gabriel Cavalcante Sobreira | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Fullstack portfolio with modern frontend architecture, premium UI, scalable projects and engineering craft."
+    />
+    <meta property="og:image" content="/og-cover.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Gabriel Cavalcante Sobreira | Software Engineer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
