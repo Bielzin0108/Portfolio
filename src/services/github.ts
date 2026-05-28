@@ -10,6 +10,7 @@ export type GitHubDashboardData = {
   languages: GitHubLanguageStat[];
   lastPushAt: string | null;
   publicRepos: number;
+  source: "live" | "fallback";
   stars: number;
   username: string;
 };
@@ -34,6 +35,23 @@ const languageColors: Record<string, string> = {
   Java: "#f4f7fb",
   JavaScript: "#f7df1e",
   TypeScript: "#2df28c"
+};
+
+const fallbackGitHubDashboard: GitHubDashboardData = {
+  activityCells: Array.from({ length: 84 }, (_, index) => ([0, 0, 0, 0.35, 0, 0.7, 0][index % 7] ?? 0)),
+  avatarUrl: "",
+  languages: [
+    { label: "TypeScript", value: 34, color: languageColors.TypeScript },
+    { label: "JavaScript", value: 25, color: languageColors.JavaScript },
+    { label: "Java", value: 20, color: languageColors.Java },
+    { label: "CSS", value: 13, color: languageColors.CSS },
+    { label: "HTML", value: 8, color: languageColors.HTML }
+  ],
+  lastPushAt: null,
+  publicRepos: 10,
+  source: "fallback",
+  stars: 2,
+  username: "Bielzin0108"
 };
 
 function buildActivityCells(repos: GitHubRepoResponse[]) {
@@ -80,7 +98,7 @@ function getFallbackLanguageStats(repos: GitHubRepoResponse[]) {
   return normalizeLanguageStats(totals);
 }
 
-export async function fetchGitHubDashboard(username: string): Promise<GitHubDashboardData> {
+async function fetchGitHubDashboardFromPublicApi(username: string): Promise<GitHubDashboardData> {
   const [userResponse, reposResponse] = await Promise.all([
     fetch(`https://api.github.com/users/${username}`),
     fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=pushed`)
@@ -120,7 +138,32 @@ export async function fetchGitHubDashboard(username: string): Promise<GitHubDash
     languages: languages.length ? languages : getFallbackLanguageStats(repos),
     lastPushAt: latestPush ?? null,
     publicRepos: user.public_repos,
+    source: "live",
     stars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
     username: user.login
   };
+}
+
+async function fetchServerDashboard(username: string) {
+  const response = await fetch(`/api/github-dashboard?username=${encodeURIComponent(username)}`);
+  if (!response.ok) throw new Error("github-server-api-error");
+  return (await response.json()) as GitHubDashboardData;
+}
+
+function canUseDirectGitHubFallback() {
+  return window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+}
+
+export async function fetchGitHubDashboard(username: string): Promise<GitHubDashboardData> {
+  try {
+    return await fetchServerDashboard(username);
+  } catch {
+    if (!canUseDirectGitHubFallback()) return fallbackGitHubDashboard;
+
+    try {
+      return await fetchGitHubDashboardFromPublicApi(username);
+    } catch {
+      return fallbackGitHubDashboard;
+    }
+  }
 }

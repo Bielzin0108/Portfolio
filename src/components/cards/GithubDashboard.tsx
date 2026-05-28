@@ -34,11 +34,14 @@ export function GithubDashboard() {
   const activityCells = data?.activityCells ?? fallbackActivityCells;
   const languages = data?.languages ?? [];
   const lastPushLabel = data?.lastPushAt ? getRelativeDateLabel(data.lastPushAt, i18n.language) : "--";
+  const badgeTone = status === "error" ? "red" : data?.source === "fallback" ? "ice" : "green";
   const statusLabel =
     status === "loading"
       ? t("github.loading", "carregando")
       : status === "error"
         ? t("github.unavailable", "indisponivel")
+        : data?.source === "fallback"
+          ? t("github.cached", "dados locais")
         : t("github.live", "api real");
 
   return (
@@ -63,7 +66,7 @@ export function GithubDashboard() {
               <p className="break-anywhere text-xs text-muted-foreground">{profile.email}</p>
             </div>
           </div>
-          <Badge tone={status === "error" ? "red" : "green"}>{statusLabel}</Badge>
+          <Badge tone={badgeTone}>{statusLabel}</Badge>
         </div>
 
         <div className="grid grid-cols-12 gap-1">
