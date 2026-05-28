@@ -16,3 +16,6 @@ pnpm-debug.log*
 /public/burguer.png
 /public/pokebola.png
 /public/portuguesa.png
+
+.vercel
+.env*.local
