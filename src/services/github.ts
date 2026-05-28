@@ -7,7 +7,6 @@ export type GitHubLanguageStat = {
 export type GitHubDashboardData = {
   activityCells: number[];
   avatarUrl: string;
-  forks: number;
   languages: GitHubLanguageStat[];
   lastPushAt: string | null;
   publicRepos: number;
@@ -119,7 +118,6 @@ export async function fetchGitHubDashboard(username: string): Promise<GitHubDash
   return {
     activityCells: buildActivityCells(repos),
     avatarUrl: user.avatar_url,
-    forks: repos.reduce((sum, repo) => sum + repo.forks_count, 0),
     languages: languages.length ? languages : getFallbackLanguageStats(repos),
     lastPushAt: latestPush ?? null,
     publicRepos: user.public_repos,

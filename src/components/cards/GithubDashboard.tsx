@@ -34,6 +34,12 @@ export function GithubDashboard() {
   const activityCells = data?.activityCells ?? fallbackActivityCells;
   const languages = data?.languages ?? [];
   const lastPushLabel = data?.lastPushAt ? getRelativeDateLabel(data.lastPushAt, i18n.language) : "--";
+  const statusLabel =
+    status === "loading"
+      ? t("github.loading", "carregando")
+      : status === "error"
+        ? t("github.unavailable", "indisponivel")
+        : t("github.live", "api real");
 
   return (
     <div className="glass-panel mx-auto mt-14 grid max-w-5xl gap-6 rounded-lg p-5 lg:grid-cols-[1.25fr_0.75fr]">
@@ -57,9 +63,7 @@ export function GithubDashboard() {
               <p className="break-anywhere text-xs text-muted-foreground">{profile.email}</p>
             </div>
           </div>
-          <Badge tone={status === "error" ? "red" : "green"}>
-            {status === "loading" ? t("github.loading") : status === "error" ? t("github.unavailable") : t("github.live")}
-          </Badge>
+          <Badge tone={status === "error" ? "red" : "green"}>{statusLabel}</Badge>
         </div>
 
         <div className="grid grid-cols-12 gap-1">
@@ -79,22 +83,22 @@ export function GithubDashboard() {
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           <div className="rounded-md border border-border bg-background/40 p-4">
             <p className="font-mono text-2xl font-bold text-foreground">{data?.stars ?? "--"}</p>
-            <p className="text-sm text-muted-foreground">{t("github.stars")}</p>
+            <p className="text-sm text-muted-foreground">{t("github.stars", "Estrelas")}</p>
           </div>
           <div className="rounded-md border border-border bg-background/40 p-4">
             <p className="font-mono text-2xl font-bold text-foreground">{data?.publicRepos ?? "--"}</p>
-            <p className="text-sm text-muted-foreground">{t("github.repositories")}</p>
+            <p className="text-sm text-muted-foreground">{t("github.repositories", "Repositórios")}</p>
           </div>
           <div className="rounded-md border border-border bg-background/40 p-4">
             <p className="font-mono text-2xl font-bold text-foreground">{lastPushLabel}</p>
-            <p className="text-sm text-muted-foreground">{t("github.lastUpdate")}</p>
+            <p className="text-sm text-muted-foreground">{t("github.lastUpdate", "Último push")}</p>
           </div>
         </div>
       </div>
 
       <div className="rounded-md border border-border bg-background/45 p-5">
         <div className="flex items-center justify-between gap-3">
-          <h3 className="font-mono text-lg font-semibold text-foreground">{t("github.languages")}</h3>
+          <h3 className="font-mono text-lg font-semibold text-foreground">{t("github.languages", "Linguagens")}</h3>
           {status === "loading" ? <RefreshCw className="h-4 w-4 animate-spin text-primary" /> : null}
         </div>
 
@@ -127,15 +131,11 @@ export function GithubDashboard() {
             </div>
           )}
 
-          {data ? (
-            <div className="rounded-md border border-border bg-background/35 p-3 font-mono text-xs text-muted-foreground">
-              forks={data.forks}<br />
-              source=github-public-rest-api<br />
-              activity=repository-push-events
-            </div>
+          {status === "error" ? (
+            <p className="text-sm leading-6 text-muted-foreground">
+              {t("github.error", "Não foi possível carregar os dados do GitHub agora.")}
+            </p>
           ) : null}
-
-          {status === "error" ? <p className="text-sm leading-6 text-muted-foreground">{t("github.error")}</p> : null}
         </div>
       </div>
     </div>
