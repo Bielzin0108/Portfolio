@@ -96,7 +96,7 @@ export const projects: Project[] = [
   {
     key: "hamburgueria",
     name: "HamburgueRia",
-    category: "Projeto pessoal",
+    category: "Projeto acadêmico",
     github: "https://github.com/Bielzin0108/HamburgueRia",
     image: "/assets/projects/burguer.png",
     technologies: ["React", "JavaScript", "CSS"]
@@ -110,12 +110,5 @@ export const projects: Project[] = [
     technologies: ["Java", "JSP", "Servlets", "Maven", "H2", "HTML", "CSS"]
   }
 ];
-
-export const githubStats = [
-  { label: "TypeScript", value: 42, color: "#2df28c" },
-  { label: "JavaScript", value: 31, color: "#ef4444" },
-  { label: "Java", value: 17, color: "#f4f7fb" },
-  { label: "CSS", value: 10, color: "#9aa4b2" }
-] as const;
 
 export const learningStack = ["System Design", "Micro frontends", "Cloud-native UX", "Testing strategy"] as const;

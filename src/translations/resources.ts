@@ -130,11 +130,17 @@ export const resources = {
         eyebrow: "GitHub",
         title: "Sinais de engenharia, contribuição e evolução contínua.",
         description:
-          "Uma leitura visual das contribuições, linguagens e foco técnico. A seção está pronta para receber integração real com a API do GitHub.",
+          "Uma leitura visual de atividade pública, linguagens e foco técnico conectada em tempo real à API pública do GitHub.",
         contributions: "Contribuições",
         repositories: "Repositórios",
         streak: "Sequência",
-        languages: "Linguagens"
+        languages: "Linguagens",
+        live: "api real",
+        loading: "carregando",
+        unavailable: "indisponível",
+        stars: "Estrelas",
+        lastUpdate: "Último push",
+        error: "Não foi possível carregar os dados do GitHub agora. A seção volta automaticamente quando a API responder."
       },
       contact: {
         eyebrow: "Contato",
@@ -293,11 +299,17 @@ export const resources = {
         eyebrow: "GitHub",
         title: "Engineering signals, contribution and continuous growth.",
         description:
-          "A visual read of contributions, languages and technical focus. This section is ready to receive a real GitHub API integration.",
+          "A visual read of public activity, languages and technical focus connected in real time to the public GitHub API.",
         contributions: "Contributions",
         repositories: "Repositories",
         streak: "Streak",
-        languages: "Languages"
+        languages: "Languages",
+        live: "live api",
+        loading: "loading",
+        unavailable: "unavailable",
+        stars: "Stars",
+        lastUpdate: "Last push",
+        error: "GitHub data could not be loaded right now. The section recovers automatically when the API responds."
       },
       contact: {
         eyebrow: "Contact",
@@ -456,11 +468,17 @@ export const resources = {
         eyebrow: "GitHub",
         title: "Señales de ingeniería, contribución y evolución continua.",
         description:
-          "Una lectura visual de contribuciones, lenguajes y foco técnico. Esta sección está lista para recibir integración real con la API de GitHub.",
+          "Una lectura visual de actividad pública, lenguajes y foco técnico conectada en tiempo real a la API pública de GitHub.",
         contributions: "Contribuciones",
         repositories: "Repositorios",
         streak: "Racha",
-        languages: "Lenguajes"
+        languages: "Lenguajes",
+        live: "api real",
+        loading: "cargando",
+        unavailable: "no disponible",
+        stars: "Estrellas",
+        lastUpdate: "Último push",
+        error: "No fue posible cargar los datos de GitHub ahora. La sección se recupera automáticamente cuando la API responda."
       },
       contact: {
         eyebrow: "Contacto",
