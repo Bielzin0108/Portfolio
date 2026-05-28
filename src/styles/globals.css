@@ -55,6 +55,9 @@
     color-scheme: dark;
     scroll-padding-top: 92px;
     text-rendering: geometricPrecision;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   html.light {
@@ -69,11 +72,15 @@
       "cv04" 1,
       "cv11" 1;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   #root {
     min-height: 100vh;
     background: hsl(var(--background));
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -156,7 +163,7 @@
   }
 
   .section-shell {
-    @apply container relative py-20 sm:py-24 lg:py-28;
+    @apply container relative overflow-hidden py-20 sm:py-24 lg:py-28;
   }
 
   .balanced {
@@ -165,6 +172,14 @@
 
   .break-anywhere {
     overflow-wrap: anywhere;
+  }
+}
+
+@supports (overflow-x: clip) {
+  html,
+  body,
+  #root {
+    overflow-x: clip;
   }
 }
 

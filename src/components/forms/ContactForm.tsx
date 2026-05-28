@@ -51,7 +51,7 @@ export function ContactForm() {
         <div className="grid h-12 w-12 place-items-center rounded-md border border-primary/30 bg-primary/10 text-primary">
           <Mail className="h-5 w-5" />
         </div>
-        <h3 className="mt-6 font-mono text-xl font-semibold text-foreground">{profile.email}</h3>
+        <h3 className="break-anywhere mt-6 font-mono text-xl font-semibold text-foreground">{profile.email}</h3>
         <p className="mt-3 text-sm leading-7 text-muted-foreground">{profile.city}</p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Button asChild variant="red">

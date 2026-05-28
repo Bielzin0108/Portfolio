@@ -16,12 +16,12 @@ export function ExperienceTimeline() {
           return (
             <article
               key={experience.key}
-              className={`relative grid gap-6 sm:grid-cols-[1fr_1fr] ${index % 2 === 0 ? "" : "sm:[&>div]:col-start-2"}`}
+              className={`relative grid gap-6 pl-14 sm:grid-cols-[1fr_1fr] sm:pl-0 ${index % 2 === 0 ? "" : "sm:[&>div]:col-start-2"}`}
             >
               <span className="absolute left-1.5 top-2 grid h-8 w-8 place-items-center rounded-md border border-primary/30 bg-background text-primary shadow-premium-green sm:left-1/2 sm:-translate-x-1/2">
                 <BriefcaseBusiness className="h-4 w-4" />
               </span>
-              <div className="glass-panel ml-14 rounded-lg p-5 sm:ml-0">
+              <div className="glass-panel min-w-0 rounded-lg p-5">
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                   <Badge tone={index === 0 ? "green" : "red"}>{experience.period}</Badge>
                   <span className="font-mono text-xs text-muted-foreground">{experience.company}</span>
