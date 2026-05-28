@@ -22,7 +22,6 @@ type GitHubUserResponse = {
 
 type GitHubRepoResponse = {
   fork: boolean;
-  forks_count: number;
   language: string | null;
   languages_url: string;
   pushed_at: string | null;

@@ -67,20 +67,25 @@ export const projects: Project[] = [
     name: "Bartie",
     category: "Confeitaria Gourmet",
     deploy: "https://bartie-gourmet.vercel.app/",
+    github: "https://github.com/Bielzin0108/Barty-Gourmet",
     image: "/assets/projects/bartie.png",
     technologies: ["React", "Tailwind", "JavaScript"]
   },
   {
     key: "portuguesa",
     name: "Portuguesa Banespa",
+    category: "Projeto pessoal",
     deploy: "https://portuguesa-v2.vercel.app/",
+    github: "https://github.com/Bielzin0108/portuguesa-react",
     image: "/assets/projects/portuguesa.png",
     technologies: ["React", "CSS", "JavaScript"]
   },
   {
     key: "banespa",
     name: "Banespa Championship",
+    category: "Projeto pessoal",
     deploy: "https://banespa.vercel.app/",
+    github: "https://github.com/Bielzin0108/Banespa",
     image: "/assets/projects/banespa.png",
     technologies: ["React", "CSS", "JavaScript"]
   },

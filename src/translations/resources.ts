@@ -116,9 +116,9 @@ export const resources = {
         bartie:
           "Plataforma moderna para divulgação e venda de doces gourmet, com design elegante, foco em experiência visual premium e apresentação sofisticada dos produtos.",
         portuguesa:
-          "Site desenvolvido para o time Portuguesa no campeonato interno do Banespa, apresentando jogos, tabela, informações da equipe e experiência responsiva moderna para os torcedores.",
+          "Projeto pessoal criado apenas para estudos pessoais e acadêmicos, simulando um site para o time Portuguesa no campeonato interno do Banespa, com jogos, tabela, informações da equipe e experiência responsiva.",
         banespa:
-          "Projeto focado na modernização visual e estrutural do campeonato Banespa, oferecendo uma interface intuitiva, organizada e moderna para acompanhamento esportivo.",
+          "Projeto pessoal criado apenas para estudos pessoais e acadêmicos, simulando a modernização visual e estrutural do campeonato Banespa em uma interface organizada para acompanhamento esportivo.",
         pokedex:
           "Pokédex interativa para consulta de Pokémon, com foco em busca, apresentação visual organizada e experiência responsiva para explorar dados de forma simples.",
         hamburgueria:
@@ -159,7 +159,7 @@ export const resources = {
         error: "Não foi possível enviar agora. Tente pelo email ou LinkedIn."
       },
       footer: {
-        phrase: "Crafting modern digital experiences.",
+        phrase: "Criando experiências digitais modernas.",
         made: "Desenvolvido com React, TypeScript e atenção aos detalhes."
       },
       notFound: {
@@ -285,9 +285,9 @@ export const resources = {
         bartie:
           "Modern platform for promoting and selling gourmet sweets, with elegant design, premium visual experience and sophisticated product presentation.",
         portuguesa:
-          "Website developed for Portuguesa in the internal Banespa championship, featuring matches, table, team information and a responsive experience for supporters.",
+          "Personal project created only for personal and academic studies, simulating a website for Portuguesa in the internal Banespa championship with matches, standings, team information and a responsive experience.",
         banespa:
-          "Project focused on visually and structurally modernizing the Banespa championship, offering an intuitive, organized and modern interface for sports tracking.",
+          "Personal project created only for personal and academic studies, simulating the visual and structural modernization of the Banespa championship in an organized interface for sports tracking.",
         pokedex:
           "Interactive Pokédex for Pokémon lookup, focused on search, organized visual presentation and a responsive experience for exploring data clearly.",
         hamburgueria:
@@ -454,9 +454,9 @@ export const resources = {
         bartie:
           "Plataforma moderna para divulgación y venta de dulces gourmet, con diseño elegante, experiencia visual premium y presentación sofisticada de productos.",
         portuguesa:
-          "Sitio desarrollado para el equipo Portuguesa en el campeonato interno de Banespa, con juegos, tabla, información del equipo y experiencia responsiva para los hinchas.",
+          "Proyecto personal creado solo para estudios personales y académicos, simulando un sitio para Portuguesa en el campeonato interno de Banespa con partidos, tabla, información del equipo y experiencia responsiva.",
         banespa:
-          "Proyecto enfocado en modernizar visual y estructuralmente el campeonato Banespa, ofreciendo una interfaz intuitiva, organizada y moderna para seguimiento deportivo.",
+          "Proyecto personal creado solo para estudios personales y académicos, simulando la modernización visual y estructural del campeonato Banespa en una interfaz organizada para seguimiento deportivo.",
         pokedex:
           "Pokédex interactiva para consulta de Pokémon, con foco en búsqueda, presentación visual organizada y experiencia responsiva para explorar datos de forma simple.",
         hamburgueria:
@@ -497,7 +497,7 @@ export const resources = {
         error: "No fue posible enviarlo ahora. Intenta por email o LinkedIn."
       },
       footer: {
-        phrase: "Crafting modern digital experiences.",
+        phrase: "Creando experiencias digitales modernas.",
         made: "Desarrollado con React, TypeScript y atención al detalle."
       },
       notFound: {
